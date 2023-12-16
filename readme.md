@@ -10,6 +10,8 @@ To get started, you need to have Node.js and npm installed on your machine.
 2. Install the dependencies using `npm install`
 3. Start the server using `npm start`
 
+now the server run on 8787 port.
+
 ## Endpoints
 
 ### `GET /`
