@@ -14,13 +14,14 @@ now the server run on 8787 port.
 
 ## Endpoints
 
-### `GET /`
-
-Returns a simple "Hello World!" message.
-
 ### `POST /login`
 
 Expects a JSON body with `name` and `password` fields. If `name` is "admin" and `password` is "123456", it returns a success message. Otherwise, it returns a failure message.
+
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"name":"admin","password":"123456"}' http://localhost:8787/login
+```
 
 ### `POST /appointment`
 
@@ -38,6 +39,35 @@ Expects a JSON body with business data. It stores the data and returns it.
 
 Returns the stored business data.
 
-## Testing
+## objects
 
-You can test the endpoints using any HTTP client like curl or Postman.
+### Business Object
+
+The business object contains information about the business:
+
+```javascript
+const business = {
+    name: "Coding Academy",
+    address: "Rothschild 60 Tel Aviv",
+    phone: "03-1234567",
+    owner: "Yariv Katz",
+    logo: "https://coding-academy.org/images/ca_logo.png",
+    description: "The best coding academy in the world",
+};
+```
+
+### Meeting Object
+
+The meeting object contains information about a meeting:
+
+```javascript
+const meeting = {
+    serviceName: "פגישת ייעוץ",
+    serviceDescription: "פגישת ייעוץ עם יריב כץ",
+    servicePrice: 500,
+    dateTime: "2021-06-20T10:00:00.000Z",//מבנה של תאריך ושעה סטנדרטי בjs
+    clientName: "אבי כהן",
+    clientPhone: "050-1234567",
+    clientEmail: "m@m.com",
+};
+```
