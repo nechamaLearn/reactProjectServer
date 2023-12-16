@@ -10,6 +10,8 @@ To get started, you need to have Node.js and npm installed on your machine.
 2. Install the dependencies using `npm install`
 3. Start the server using `npm start`
 
+now the server run on 8787 port.
+
 ## Endpoints
 
 ### `GET /`
@@ -20,7 +22,7 @@ Returns a simple "Hello World!" message.
 
 Expects a JSON body with `name` and `password` fields. If `name` is "admin" and `password` is "123456", it returns a success message. Otherwise, it returns a failure message.
 
-### `POST /addAppointment`
+### `POST /appointment`
 
 Expects a JSON body with an `dateTime` field. It checks if the time is available and if so, adds a new appointment to the appointments array and returns a success message. If the time is not available, it returns a failure message.
 

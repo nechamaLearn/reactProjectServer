@@ -32,7 +32,7 @@ app.post("/login", (req, res) => {
 // add post request that add new appointment to the appointments array and check in the array if the time is available or not
 const appointments = [];
 
-app.post("/addAppointment", (req, res) => {
+app.post("/appointment", (req, res) => {
     const body = req.body;
     let isAvailable = true;
     // from foreach loop to for of loop
