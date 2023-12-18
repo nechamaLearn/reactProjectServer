@@ -31,6 +31,14 @@ Expects a JSON body with an `dateTime` field. It checks if the time is available
 
 Returns all appointments.
 
+### `POST /appointment`
+
+Expects a JSON body. It checks if a service with the same name isn't exist yet. if so, adds a new service to the services array and returns a success message. 
+
+### `GET /services`
+
+Returns all services
+
 ### `POST /businessData`
 
 Expects a JSON body with business data. It stores the data and returns it.
@@ -47,12 +55,26 @@ The business object contains information about the business:
 
 ```javascript
 const business = {
+    id: "123",
     name: "Coding Academy",
     address: "Rothschild 60 Tel Aviv",
     phone: "03-1234567",
     owner: "Yariv Katz",
     logo: "https://coding-academy.org/images/ca_logo.png",
     description: "The best coding academy in the world",
+};
+```
+### Service Object
+
+The service object contains information about a service:
+
+```javascript
+const service = {
+    id: "11",
+    name: "פגישת ייעוץ פרונטלית",
+    description: "פגישת ייעוץ פרטנית בקליניקה"
+    price: 500,
+    duration: 60,
 };
 ```
 
@@ -62,9 +84,8 @@ The meeting object contains information about a meeting:
 
 ```javascript
 const meeting = {
-    serviceName: "פגישת ייעוץ",
-    serviceDescription: "פגישת ייעוץ עם יריב כץ",
-    servicePrice: 500,
+    id: "758",
+    serviceType: "123",
     dateTime: "2021-06-20T10:00:00.000Z",//מבנה של תאריך ושעה סטנדרטי בjs
     clientName: "אבי כהן",
     clientPhone: "050-1234567",

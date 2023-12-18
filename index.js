@@ -57,6 +57,25 @@ app.get("/appointments", (req, res) => {
     res.send(appointments);
 });
 
+let services = [];
+
+app.post("/service", (req, res) => {
+    const serviceExists = services.find((service) => service.name === req.body.name);
+    if (serviceExists) {
+        res.statusCode = 400;
+        res.send("Service already exists!");
+        return;
+    }
+    const body = req.body;
+    services.push(body);
+    res.statusCode = 200;
+    res.send("Service added successfully!");
+});
+
+app.get("/services", (req, res) => {
+    res.send(services);
+});
+
 let businessData ={};
 
 app.post("/businessData", (req, res) => {
