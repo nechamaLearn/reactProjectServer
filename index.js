@@ -85,6 +85,14 @@ app.post("/businessData", (req, res) => {
     res.send(businessData);
 });
 
+
+app.put("/businessData", (req, res) => {
+    const body = req.body;
+    businessData = body;
+    res.statusCode = 200;
+    res.send(businessData);
+});
+
 app.get("/businessData", (req, res) => {
     res.send(businessData);
 });

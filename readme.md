@@ -31,7 +31,7 @@ Expects a JSON body with an `dateTime` field. It checks if the time is available
 
 Returns all appointments.
 
-### `POST /appointment`
+### `POST /service`
 
 Expects a JSON body. It checks if a service with the same name isn't exist yet. if so, adds a new service to the services array and returns a success message. 
 
@@ -78,14 +78,14 @@ const service = {
 };
 ```
 
-### Meeting Object
+### Meeting (appointment) Object
 
 The meeting object contains information about a meeting:
 
 ```javascript
 const meeting = {
     id: "758",
-    serviceType: "123",
+    serviceType: "11",
     dateTime: "2021-06-20T10:00:00.000Z",//מבנה של תאריך ושעה סטנדרטי בjs
     clientName: "אבי כהן",
     clientPhone: "050-1234567",
