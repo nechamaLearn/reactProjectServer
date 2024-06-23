@@ -11,7 +11,7 @@ app.listen(8787, () => {
 });
 
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    res.send("Hello node!");
 }
 );
 
